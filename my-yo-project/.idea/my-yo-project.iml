@@ -5,6 +5,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="bundler (v1.6.3, RVM: ruby-2.0.0-p247) [gem]" level="application" />
+    <orderEntry type="library" name="my-yo-project node_modules" level="project" />
   </component>
 </module>
 

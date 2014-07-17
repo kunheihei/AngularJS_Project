@@ -20,16 +20,20 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
+        templateUrl: 'views/list.html',
+        controller: 'ListCtrl'
       })
       .when('/create', {
         templateUrl: 'views/create.html',
         controller: 'CreateCtrl'
+      })
+      .when('/add', {
+        templateUrl: 'views/add.html',
+        controller: 'AddCtrl'
+      })
+      .when('/list', {
+        templateUrl: 'views/list.html',
+        controller: 'ListCtrl'
       })
       .otherwise({
         redirectTo: '/'

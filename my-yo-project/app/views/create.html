@@ -1,7 +1,7 @@
-<header>
-    <h2 style="color: blue">创建活动</h2>
+<header id='create_page'>
+    <h3 style="color: blue">创建活动</h3>
     <div class="header-left">
-        <a href="receiver-list.html" class="btn-style btn-4 btn-primary">返回</a>
+      <a class="btn-style btn-4 btn-primary" id="cback" ng-click="go_list()">{{back}}</a>
     </div>
 </header>
 
@@ -10,13 +10,24 @@
     <form class="wrapper-inner">
         <fieldset class="form-wrapper">
 
-<h3>活动名称：</h3>
+<h4>活动名称：</h4>
 
-<input class="input-full" type="search">
+<input class="input-full" type="text" id="input" ng-model="change" ng-change="update()" />
+
+
+<h4 style="text-align:center" id="warning"> </h4>
+
 
 <div  style="text-align:center">
-    <a href="receiver-list.html" class="btn-style btn-1 btn-primary">创建</a>
+    <button class="btn-style btn-primary" id="activity"
+            ng-click="go_add()"><h3>{{create}}</h3></button>
 </div>
 
+            <!--<script>-->
+                <!--function activityFunction() {-->
 
-</div>
+                    <!--document.getElementById("warning").innerHTML="*活动名称重复！"-->
+
+                <!--}-->
+            <!--</script>-->
+
