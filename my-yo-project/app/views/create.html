@@ -1,7 +1,7 @@
 <header id='create_page'>
     <h3 style="color: blue">创建活动</h3>
     <div class="header-left">
-      <a class="btn-style btn-4 btn-primary" id="cback" ng-click="go_list()">{{back}}</a>
+      <a class="btn-style btn-4 btn-primary" id="back" ng-click="go_list()">{{back}}</a>
     </div>
 </header>
 
@@ -12,22 +12,17 @@
 
 <h4>活动名称：</h4>
 
-<input class="input-full" type="text" id="input" ng-model="change" ng-change="update()" />
+<input class="input-full" type="search" id="input" ng-model="change" ng-change="update()" />
 
-
-<h4 style="text-align:center" id="warning"> </h4>
-
-
-<div  style="text-align:center">
-    <button class="btn-style btn-primary" id="activity"
-            ng-click="go_add()"><h3>{{create}}</h3></button>
+<div style="color:red">
+    <h4 style="text-align:center" id="warning"></h4>
 </div>
 
-            <!--<script>-->
-                <!--function activityFunction() {-->
+<div  style="text-align:center">
+    <button class="btn btn-outlined" id="activity"
+            ng-click="go_add()" disabled="disabled"><h3>{{create}}</h3></button>
+</div>
 
-                    <!--document.getElementById("warning").innerHTML="*活动名称重复！"-->
 
-                <!--}-->
-            <!--</script>-->
 
+</div>

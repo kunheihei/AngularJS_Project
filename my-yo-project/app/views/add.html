@@ -1,12 +1,22 @@
 <header id='add_page'>
-    <h3 style="color: blue">客户列表</h3>
-    <div class="header-right">
-        <a class="btn-style btn-4 btn-primary">开始</a>
-    </div>
+    <h3 style="color: blue">报名{{number}}人</h3>
+
     <div class="header-left">
-        <a class="btn-style btn-4 btn-primary" ng-click="go_activity()">返回</a>
+        <a class="btn-style btn-4 btn-primary" ng-click="go_list()">返回</a>
     </div>
+    <div class="header-right" ng-switch on="login">
+        <button class="btn-style btn-4 btn-primary" id="start" ng-switch-when="true" ng-click="go_end()">开始</button>
+        <button class="btn-style btn-4 btn-primary" ng-switch-when="false" ng-click="go_start()">结束</button>
+    </div>
+
 </header>
+
+<div id="wrapper" class="wrapper scrollable">
+    <form class="wrapper-inner">
+        <fieldset class="form-wrapper">
+
+
+</div>
 
 <footer>
     <ul class="footer-nav footer-nav-2tabs">

@@ -15,8 +15,14 @@ angular.module('myYoProjectApp')
             $location.path('/create')
         }
 
+
         $scope.list1 = JSON.parse(localStorage.getItem('messages'))||[]
 
+        $scope.button = function(messages) {
+            //localStorage.setItem("activityname",JSON.stringify(messages.name))
+            localStorage.activityname=messages.name
+            $location.path('/add')
+        }
 
         if($scope.list1==""){
             $location.path('/create')

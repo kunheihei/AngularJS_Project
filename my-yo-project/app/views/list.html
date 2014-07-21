@@ -9,9 +9,16 @@
     <form class="wrapper-inner">
         <fieldset class="form-wrapper">
 
-    <button style="background:#ffff00" class="btn-style btn-2" ng-repeat="messages in list1">
-        <h1 style="color:#00A000">{{messages}}</h1>
-    </button>
-            <h4 style="text-align:center" id="aa"> </h4>
+<ul class="{{messages.status}}" ng-repeat="messages in list1">
+    <li class="btn-style btn-3">
+        <h1 ng-click="button(messages)" style="color:#00A000">&nbsp{{messages.name}}</h1>
+    </li>
+</ul>
+<!--<ul class="yellow1" ng-repeat="messages in list1">-->
+    <!--<a ng-click="button(messages)">-->
+        <!--<h1 style="color:#00A000" >&nbsp{{messages}}</h1>-->
+    <!--</a>-->
+<!--</ul>-->
 
 </div>
+

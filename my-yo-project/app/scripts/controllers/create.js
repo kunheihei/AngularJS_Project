@@ -15,39 +15,43 @@ angular.module('myYoProjectApp')
         $scope.create="创建活动"
 
 
-        var message={'name':$scope.change}
+        var message={'name':$scope.change,'status':"false"}
         var messages = JSON.parse(localStorage.getItem('messages')) || []
         console.log(message)
 
        $scope.update=function() {
-           message = document.getElementById("input").value
-           var i = 0
-           if(message!=" " && message != "") {
-               for (; i < messages.length; i++) {
-                   if (message==messages[i] ) {
+           message.name= document.getElementById("input").value
+           if(message.name==""||message.name==" "){
+               document.getElementById("warning").innerHTML =""
+               document.getElementById("activity").disabled = true
+           }
+           else {
+               for (var i=0; i < messages.length; i++) {
+                   if (message.name == messages[i].name||message.name==messages[i].name.concat(" ")) {
                        document.getElementById("warning").innerHTML = "*活动名称重复！"
-                       document.getElementById("activity").disabled=true
+                       document.getElementById("activity").disabled = true
                        break
                    }
                    continue
                }
                if (i == messages.length) {
-                   document.getElementById("warning").innerHTML =""
-                   document.getElementById("activity").disabled=false
+                   document.getElementById("activity").style.background = "#fafafa"
+                   document.getElementById("activity").disabled = false
+                   document.getElementById("warning").innerHTML = ""
                    $scope.go_add = function () {
                        messages.unshift(message)
                        localStorage.setItem("messages", JSON.stringify(messages))
+                       localStorage.activityname=messages[0].name
                        $location.path('/add')
                    }
                }
-
            }
 
        }
 
 
         if(messages.length==0) {
-            document.getElementById('cback').style.display = 'none'//隐藏 block显示
+            document.getElementById('back').style.display = 'none'//隐藏 block显示
         }
 
         $scope.go_list=function() {
