@@ -11,7 +11,9 @@ angular.module('myYoProjectApp')
             'Karma'
         ];
 
+        $scope.number=0
         $scope.login="true"
+
 
         var list2 = JSON.parse(localStorage.getItem('messages'))||[]
         var select = localStorage.getItem("activityname")
@@ -20,7 +22,7 @@ angular.module('myYoProjectApp')
 
 
         for(;x<list2.length;x++){
-            if(list2[x]=="true") break
+            if(list2[x].status=="true") break
         }
 
 
@@ -28,9 +30,11 @@ angular.module('myYoProjectApp')
             if (select == list2[i].name) break
         }
 
+        if(x<list2.length) $scope.startend=true
         if(list2[i].status=="true") $scope.login = "false"
 
         $scope.go_end=function() {
+
             $scope.login = "false"   //结束 按钮
             list2[i].status="true"
             localStorage.setItem("messages",JSON.stringify(list2))
@@ -45,8 +49,6 @@ angular.module('myYoProjectApp')
 
             }
         }
-
-
 
 
         $scope.go_list = function() {
